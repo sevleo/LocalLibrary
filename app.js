@@ -35,6 +35,8 @@ mongoose.set("strictQuery", false);
 
 const dev_db_url =
   "mongodb+srv://vsevolodleonov76613:poqw0912@cluster0.2zkrf9h.mongodb.net/local_library?retryWrites=true&w=majority";
+
+// Use "MONGODB_URI" variable to configure URL for Production Database
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 main().catch((err) => console.log(err));
