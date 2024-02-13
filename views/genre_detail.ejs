@@ -1,0 +1,35 @@
+<%- include('./layout.ejs', {title: title }) %>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"><%- include('./sidebar.ejs') %></div>
+  
+      <div class="col-sm-10">
+        <h1><%= genre.name %></h1>
+        <% if (genre_books.length) { %>
+            <dl>
+                <% genre_books.forEach(book => { %>
+                    <dt>
+                        <a href=<%= book.url %>><%= book.title %></a>
+
+                    </dt>
+                    <dd><%= book.summary %></dd>
+                <% }); %>
+            </dl>
+        <% } else { %>
+            <p>There are no books</p>
+        <% } %>
+        <hr>
+        <p><a href=<%= genre.url+'/delete' %>>Delete genre</a></p>
+        <p><a href=<%= genre.url+'/update' %>>Update genre</a></p>
+    </div>
+
+      
+
+    </div>
+  </div>
+  
+  
+  
+
+

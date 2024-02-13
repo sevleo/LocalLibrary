@@ -1,0 +1,36 @@
+<%- include('./layout.ejs', {title: title }) %>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"><%- include('./sidebar.ejs') %></div>
+  
+      <div class="col-sm-10">
+        <h1><%= title %></h1>
+        <p><%= bookinstance._id %> </p>
+        
+            <p>
+                Do you really want to delete this Book Instance?
+            </p>
+
+            <form method="post">
+                <div class="form-group">
+                    <input type="hidden" name="bookinstanceid" value="<%=bookinstance._id%>" id="bookinstanceid" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+
+        
+
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <ul>
+                <% errors.forEach(error => { %>
+                    <li>
+                        <%= error.msg %>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+
+    </div>
+    </div>
+  </div>

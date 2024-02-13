@@ -1,0 +1,27 @@
+<%- include('./layout.ejs', {title: title }) %>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"><%- include('./sidebar.ejs') %></div>
+  
+      <div class="col-sm-10">
+        <h1><%= title %></h1>
+        <% if (genre_list.length) { %>
+            <ul>
+                <% genre_list.forEach(genre => { %>
+                    <li>
+                        <a href=<%= genre.url %>><%= genre.name %></a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>There are no books</p>
+        <% } %>
+    </div>
+    </div>
+  </div>
+  
+  
+  
+
+

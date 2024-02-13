@@ -1,0 +1,34 @@
+<%- include('./layout.ejs', {title: title }) %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"><%- include('./sidebar.ejs') %></div>
+    <div class="col-sm-10">
+      <h1>Hi, my name is <%=title %></h1>
+      <p>
+        Welcome to <em id="LocalLibrary">LocalLibrary</em>, a very basic Express
+        website developed as a tutorial example on the Mozilla Developer
+        Network.
+      </p>
+      <h1>Dynamic content</h1>
+      <p>The library has the following record counts:</p>
+      <ul>
+        <li>
+          <strong>Books: <%=book_count %></strong>
+        </li>
+        <li>
+          <strong>Copies: <%=book_instance_count %></strong>
+        </li>
+        <li>
+          <strong>Copies available: <%=book_instance_available_count %></strong>
+        </li>
+        <li>
+          <strong>Authors: <%= author_count %></strong>
+        </li>
+        <li>
+          <strong>Genres: <%= genre_count %></strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

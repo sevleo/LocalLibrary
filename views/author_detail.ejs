@@ -1,0 +1,37 @@
+<%- include('./layout.ejs', {title: title }) %>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"><%- include('./sidebar.ejs') %></div>
+  
+      <div class="col-sm-10">
+        <h1><%= author.name %></h1>
+        <p><%= author.date_of_birth_formatted %> - <%= author.date_of_death_formatted %> </p>
+        <div style="margin-left:20px;margin-top:20px"></div>
+        <h4>Books</h4>
+        <% if (author_books.length) { %> 
+            <dl>
+                <% author_books.forEach(book => { %>
+                <dt>
+                    <a href=<%=book.url %>><%= book.title %></a>
+                </dt>
+                <dd>
+                    <%= book.summary %>
+                </dd>
+                <% }) %>
+            </dl>
+        <% } else { %>
+            <p>This author has no books.</p>
+        <% } %>
+
+        <hr>
+        <p><a href=<%= author.url+'/delete' %>>Delete author</a></p>
+        <p><a href=<%= author.url+'/update' %>>Update author</a></p>
+    </div>
+    </div>
+  </div>
+  
+  
+  
+
+
